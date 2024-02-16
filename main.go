@@ -40,7 +40,7 @@ func main() {
 		signal.Notify(sigint, os.Interrupt)
 		s := <-sigint
 		log.Println("stopping server due to: ", s.String())
-		time.Sleep(1 * time.Minute)
+		time.Sleep(2 * time.Minute)
 
 		tctx, cancel := context.WithTimeout(context.Background(), time.Second*60)
 		defer cancel()
